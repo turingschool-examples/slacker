@@ -1,4 +1,4 @@
-require './lib/redis-config'
+require '../lib/redis-config'
 require 'faraday'
 
 conn = Faraday.new(:url => 'https://hooks.slack.com')

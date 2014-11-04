@@ -1,4 +1,4 @@
-require './lib/redis-config'
+require '../lib/redis-config'
 
 data = {user: ARGV[0] || ENV['USER']}
 

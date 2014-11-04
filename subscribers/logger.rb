@@ -1,4 +1,4 @@
-require './lib/redis-config'
+require '../lib/redis-config'
 
 begin
   puts "You're logging on Slacker."

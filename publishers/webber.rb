@@ -1,5 +1,5 @@
 require 'sinatra'
-require './lib/redis-config'
+require '../lib/redis-config'
 
 get '/' do
   erb :index
