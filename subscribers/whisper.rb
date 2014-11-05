@@ -4,7 +4,7 @@ require 'faraday'
 conn = Faraday.new(:url => 'https://hooks.slack.com')
 
 begin
-  puts "Hey, I like to take whatever you say on Slacker & share it on Slack."
+  puts 'Hey, I like to take whatever you say on Slacker & share it on Slack.'
   puts "Press Ctrl-C at any time to exit.\n"
   
   $redis.subscribe(:community) do |on|
@@ -18,7 +18,7 @@ begin
       }
       
       conn.post do |req|
-        req.url '/services/T029P2S9M/B02TKTQ0W/WyVMbG8LMa4AeQ5hhSxbBCSV'
+        req.url "/services/#{ENV['SLACKER_WEBHOOK']}"
         req.headers['Content-Type'] = 'application/json'
         req.body = data.to_json
       end

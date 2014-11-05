@@ -7,7 +7,7 @@ end
 
 post '/' do
   $redis.publish :community, params.to_json
-  @message = "Your post has been published."
+  @message = 'Your post has been published.'
   erb :index
 end
 

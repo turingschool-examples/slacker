@@ -10,5 +10,5 @@ begin
     end
   end
 rescue Interrupt => e
-  puts "Goodbye..."
+  puts 'Goodbye...'
 end
