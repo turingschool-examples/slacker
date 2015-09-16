@@ -6,7 +6,7 @@ begin
   $redis.subscribe(:community) do |on|
     on.message do |channel, msg|
       data = JSON.parse(msg)
-      File.open(File.expand_path('./logs/log.txt'), 'a') do |file| 
+      File.open(File.expand_path('./log.txt'), 'a') do |file|
         file.write("[#{data['user']}]: #{data['msg']}\n")
       end
     end
