@@ -15,11 +15,13 @@ begin
         icon_url: "http://robohash.org/#{message['user']}.png",
         text: message['msg']
       }
-      conn.post do |req|
+      ENV["SLACKER_WEBHOOK"] = "T029P2S9M/B02TKTQ0W/WyVMbG8LMa4AeQ5hhSxbBCSV"
+      resp = conn.post do |req|
         req.url "/services/#{ENV['SLACKER_WEBHOOK']}"
         req.headers['Content-Type'] = 'application/json'
         req.body = data.to_json
       end
+      puts "posted message; got resp: #{resp.status}, #{resp.body}"
     end
   end
 rescue Interrupt => e

@@ -28,3 +28,28 @@ For example
 ```
 SLACKER_REDIS=my-redis-to-go-url ruby publishers/talker.rb
 ```
+## Provided Scripts
+
+### Subscribers
+
+* `subscribers/listener.rb` - Subscribes to "community" channel and prints messages to consol
+* `subscribers/logger.rb` - Subs to "community" and logs messages
+to `log.txt`
+* `subscribers/whisper.rb` - Subs to "community" and forwards messages
+to a slack integration
+
+__Note__ The `whisper.rb` slack integration requires a `SLACKER_WEBHOOK` ENV
+variable, which needs to contain the ID of the "bean-spiller" slack integration.
+
+This is an incoming webhook in the slack API which accepts messages
+and posts them to Turing's `super-secret` slack channel.
+
+Authorized slack users can retrieve the appropriate token from
+this [slack page](https://turingschool.slack.com/services/2937942030)
+
+### Publishers
+
+* `publishers/talker.rb` - Simple message input REPL - gives
+a command prompt and sends any input to "community" redis channel
+* `publishers/webber.rb` - Sinatra-based web UI for taking messages
+via a form and posting them to the redis channel
