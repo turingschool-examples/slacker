@@ -29,6 +29,6 @@ __END__
       <p><label>Name: <label><input type="text" name="user"></p>
       <p>Message: </label><input type="text" name="msg"></p>
       <input type="submit" value="Send Message">
-    </form> 
+    </form>
   </body>
 </html>
